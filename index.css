@@ -1,0 +1,15 @@
+.dataframe th:first-child{
+    text-align: left;
+    /* 表左列固定 背景色ないと透けて文字が重なる*/
+    position: sticky;
+    left: 0;
+    background-color: white;
+}
+
+.dataframe td{
+    text-align: center;
+}
+
+.jumbotron {
+    background:url(Yosemite.jpg) center no-repeat; background-size: cover;
+}
