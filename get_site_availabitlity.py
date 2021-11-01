@@ -13,16 +13,20 @@ from tqdm import tqdm # pip3 install tqdm
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 
 # Self-made module
 import log
 
-production = False
+production = True
 
 if production == True:
     parent_dir = './'
+    driver_path = '/app/.chromedriver/bin/chromedriver'
 else:
-    parent_dir = '/Users/ichiken/VSCode/python_envs/camp/'
+    #parent_dir = '/Users/ichiken/VSCode/python_envs/camp/'
+    parent_dir = './'
+    driver_path = None
 
 dataframe_html_dir = parent_dir + 'html/df_available.html'
 index_org_dir = parent_dir + 'html/index_template.html'
@@ -46,11 +50,26 @@ class RecreationGov:
         self.site_name = target[0]
         self.address = target[1]
 
-        self.driver = webdriver.Chrome()
-        self.driver.set_window_size(800,1000)
-        self.driver.set_window_position(0,0)
-        self.driver.implicitly_wait(10) #sec
+        # Headless Chromeをあらゆる環境で起動させるオプション
+        options = Options()
+        if production == True:
+            options.add_argument('--disable-gpu')
+            options.add_argument('--disable-extensions')
+            options.add_argument('--proxy-server="direct://"')
+            options.add_argument('--proxy-bypass-list=*')
+            options.add_argument('--start-maximized')
+            options.add_argument('--headless')
 
+            self.driver = webdriver.Chrome(executable_path=driver_path, chrome_options=options)
+            self.driver.implicitly_wait(10) #sec
+
+        else:
+            options.add_argument('--headless')
+
+            self.driver = webdriver.Chrome(chrome_options=options)
+            self.driver.set_window_size(800,1000)
+            self.driver.set_window_position(0,0)
+            self.driver.implicitly_wait(10) #sec
 
     def get_reservation(self, cycle):
 
