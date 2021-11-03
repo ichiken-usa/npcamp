@@ -1143,3 +1143,55 @@ Datetime
 2022-05-27           87          0
 2022-05-28           87          0
 2022-05-29           87          0}
+[2021-11-02 20:51:18,098][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-02 20:52:14,119][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-02 20:52:30,936][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-02 20:52:45,522][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-02          0          236
+2021-11-03          0          236
+2021-11-04          3          233
+2021-11-05          0          236
+2021-11-06          0          236
+2021-11-07          1          235
+2021-11-08          4          232
+2021-11-09          3          233
+2021-11-10          5          231
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          3          233
+2021-11-15          0          236
+2021-11-16          0          236, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-02           63          0
+2021-11-03           63          0
+2021-11-04           63          0
+2021-11-05           63          0
+2021-11-06           63          0
+2021-11-07           63          0
+2021-11-08           63          0
+2021-11-09           63          0
+2021-11-10           63          0
+2021-11-11           63          0
+2021-11-12           63          0
+2021-11-13           63          0
+2021-11-14           63          0
+2021-11-15           63          0
+2021-11-16           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-02           57          0
+2021-11-03           57          0
+2021-11-04           57          0
+2021-11-05           57          0
+2021-11-06           57          0
+2021-11-07           57          0
+2021-11-08           57          0
+2021-11-09           57          0
+2021-11-10           57          0
+2021-11-11           57          0
+2021-11-12           57          0
+2021-11-13           57          0
+2021-11-14           57          0
+2021-11-15           57          0
+2021-11-16           57          0}

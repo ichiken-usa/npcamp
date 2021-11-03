@@ -25,7 +25,7 @@ if production == True:
 else:
     driver_path = None
 
-dataframe_html_dir = parent_dir + 'html/df_available.html'
+dataframe_html_dir = parent_dir + 'tmp/df_available.html'
 index_org_dir = parent_dir + 'html/index_template.html'
 index_dir = parent_dir + 'index.html'
 
@@ -247,9 +247,9 @@ if __name__ == '__main__':
             ['Yosemite Upper Pines','https://www.recreation.gov/camping/campgrounds/232447'],
             ['Yosemite Lower Pines','https://www.recreation.gov/camping/campgrounds/232450'],
             ['Yosemite North Pines','https://www.recreation.gov/camping/campgrounds/232449'],
-            ['Grand Canyon Mather Campground', 'https://www.recreation.gov/camping/campgrounds/232490'],
-            ['Grand Canyon Desert View Campground', 'https://www.recreation.gov/camping/campgrounds/258825'],
-            ['Grand Canyon North Rim Campground', 'https://www.recreation.gov/camping/campgrounds/232489'],
+            #['Grand Canyon Mather Campground', 'https://www.recreation.gov/camping/campgrounds/232490'],
+            #['Grand Canyon Desert View Campground', 'https://www.recreation.gov/camping/campgrounds/258825'],
+            #['Grand Canyon North Rim Campground', 'https://www.recreation.gov/camping/campgrounds/232489'],
             ]
 
         df_dict = {} # {キャンプ場名: df index=Datetime columns=[Available, Unavailable]}
