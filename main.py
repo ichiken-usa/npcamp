@@ -1,14 +1,12 @@
-# ver 1.0
 # https://tanuhack.com/selenium-bs4-heroku/
 
 # Major module
 from datetime import datetime, timedelta, timezone
-#import locale
 from logging import getLogger
 from time import sleep
 import pandas as pd
 from tqdm import tqdm # pip3 install tqdm
-#from bs4 import BeautifulSoup # pip3 install bs4
+import gc
 
 # Selenium: pip3 install selenium
 from selenium import webdriver
@@ -19,14 +17,12 @@ from selenium.webdriver.chrome.options import Options
 # Self-made module
 import log
 
-production = True
+production = False
+parent_dir = './'
 
 if production == True:
-    parent_dir = './'
     driver_path = '/app/.chromedriver/bin/chromedriver'
 else:
-    #parent_dir = '/Users/ichiken/VSCode/python_envs/camp/'
-    parent_dir = './'
     driver_path = None
 
 dataframe_html_dir = parent_dir + 'html/df_available.html'
@@ -133,6 +129,8 @@ class RecreationGov:
 
                     # 結果を分解してリストに格納 [[Datetime][Status][1]] 1はpivotのカウント用
                     availability_list.append(self.__get_dt_and_status(text))
+
+                    gc.collect()
 
                 logger.debug(f'availability len: {len(availability_list)}')
 
@@ -264,6 +262,9 @@ if __name__ == '__main__':
             header = f'<a href="{target[1]}" target="_blank" rel="noopener noreferrer">{target[0]}</a>'
             
             df_dict[header] = rc.get_reservation(cycle)
+
+            del rc
+            gc.collect()
 
         logger.info(df_dict)
 

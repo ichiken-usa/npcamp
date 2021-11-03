@@ -1040,3 +1040,106 @@ Datetime
 2022-05-27           87          0
 2022-05-28           87          0
 2022-05-29           87          0}
+[2021-11-02 20:23:26,556][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-02 20:24:24,012][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-02 20:24:40,370][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-02 20:24:55,829][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232490
+[2021-11-02 20:26:13,344][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/258825
+[2021-11-02 20:26:27,390][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232489
+[2021-11-02 20:26:47,793][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-02          0          236
+2021-11-03          0          236
+2021-11-04          2          234
+2021-11-05          0          236
+2021-11-06          0          236
+2021-11-07          1          235
+2021-11-08          4          232
+2021-11-09          3          233
+2021-11-10          5          231
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          3          233
+2021-11-15          0          236
+2021-11-16          0          236, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-02           63          0
+2021-11-03           63          0
+2021-11-04           63          0
+2021-11-05           63          0
+2021-11-06           63          0
+2021-11-07           63          0
+2021-11-08           63          0
+2021-11-09           63          0
+2021-11-10           63          0
+2021-11-11           63          0
+2021-11-12           63          0
+2021-11-13           63          0
+2021-11-14           63          0
+2021-11-15           63          0
+2021-11-16           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-02           57          0
+2021-11-03           57          0
+2021-11-04           57          0
+2021-11-05           57          0
+2021-11-06           57          0
+2021-11-07           57          0
+2021-11-08           57          0
+2021-11-09           57          0
+2021-11-10           57          0
+2021-11-11           57          0
+2021-11-12           57          0
+2021-11-13           57          0
+2021-11-14           57          0
+2021-11-15           57          0
+2021-11-16           57          0, '<a href="https://www.recreation.gov/camping/campgrounds/232490" target="_blank" rel="noopener noreferrer">Grand Canyon Mather Campground</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-02        114          197
+2021-11-03        160          151
+2021-11-04        166          145
+2021-11-05        125          186
+2021-11-06        119          192
+2021-11-07        174          137
+2021-11-08        182          129
+2021-11-09        207          104
+2021-11-10        201          110
+2021-11-11        145          166
+2021-11-12        135          176
+2021-11-13        155          156
+2021-11-14        225           86
+2021-11-15        249           62
+2021-11-16        243           68, '<a href="https://www.recreation.gov/camping/campgrounds/258825" target="_blank" rel="noopener noreferrer">Grand Canyon Desert View Campground</a>': Status      Available  Unavailable
+Datetime                          
+2022-04-15         47            3
+2022-04-16         49            1
+2022-04-17         49            1
+2022-04-18         47            3
+2022-04-19         47            3
+2022-04-20         48            2
+2022-04-21         49            1
+2022-04-22         49            1
+2022-04-23         48            2
+2022-04-24         48            2
+2022-04-25         48            2
+2022-04-26         47            3
+2022-04-27         46            4
+2022-04-28         46            4
+2022-04-29         48            2, '<a href="https://www.recreation.gov/camping/campgrounds/232489" target="_blank" rel="noopener noreferrer">Grand Canyon North Rim Campground</a>': Status      Unavailable  Available
+Datetime                          
+2022-05-15           87          0
+2022-05-16           87          0
+2022-05-17           87          0
+2022-05-18           87          0
+2022-05-19           87          0
+2022-05-20           87          0
+2022-05-21           87          0
+2022-05-22           87          0
+2022-05-23           87          0
+2022-05-24           87          0
+2022-05-25           87          0
+2022-05-26           87          0
+2022-05-27           87          0
+2022-05-28           87          0
+2022-05-29           87          0}

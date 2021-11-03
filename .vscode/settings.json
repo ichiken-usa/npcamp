@@ -1,3 +1,6 @@
 {
-    "python.pythonPath": "bin/python"
+    "python.pythonPath": "bin/python",
+    "cSpell.ignoreWords": [
+        "tqdm"
+    ]
 }
