@@ -17,13 +17,13 @@ from selenium.webdriver.chrome.options import Options
 # Self-made module
 import log
 
-production = False
+production = True
 parent_dir = './'
 
-if production == True:
-    driver_path = '/app/.chromedriver/bin/chromedriver'
-else:
-    driver_path = None
+#if production == True:
+#    driver_path = '/app/.chromedriver/bin/chromedriver'
+#else:
+#    driver_path = None
 
 dataframe_html_dir = parent_dir + 'tmp/df_available.html'
 index_org_dir = parent_dir + 'html/index_template.html'
@@ -57,7 +57,7 @@ class RecreationGov:
             options.add_argument('--start-maximized')
             options.add_argument('--headless')
 
-            self.driver = webdriver.Chrome(executable_path=driver_path, chrome_options=options)
+            self.driver = webdriver.Chrome(chrome_options=options)
             self.driver.implicitly_wait(10) #sec
 
         else:
@@ -128,8 +128,11 @@ class RecreationGov:
                     #logger.debug(text)
 
                     # 結果を分解してリストに格納 [[Datetime][Status][1]] 1はpivotのカウント用
-                    availability_list.append(self.__get_dt_and_status(text))
+                    rtn_list = self.__get_dt_and_status(text)
+                    availability_list.append(rtn_list)
 
+                    del text
+                    del rtn_list
                     gc.collect()
 
                 logger.debug(f'availability len: {len(availability_list)}')
@@ -264,6 +267,7 @@ if __name__ == '__main__':
             df_dict[header] = rc.get_reservation(cycle)
 
             del rc
+            del header
             gc.collect()
 
         logger.info(df_dict)
@@ -285,7 +289,7 @@ if __name__ == '__main__':
 
         # HTML出力 T属性で行列転置 日付をカラムへ
         # Classで直接hover用のクラスを入れる
-        df_for_html.T.to_html(dataframe_html_dir, escape=False, justify='center', classes='table-hover')
+        #dataframe_html = df_for_html.T.to_html(dataframe_html_dir, escape=False, justify='center', classes='table-hover')
 
     page_dict = {} # {置換対象 : 中身}
 
@@ -293,8 +297,10 @@ if __name__ == '__main__':
     # テンプレ読み込んで置換する方法 https://1-notes.com/python-replace-html/
 
     # DataframeをHTMLとして出力したものを読み込み
-    with open(dataframe_html_dir, 'r') as f:
-        page_dict['dataframe_html'] = f.read()
+    #with open(dataframe_html_dir, 'r') as f:
+    #    page_dict['dataframe_html'] = f.read()
+
+    page_dict['dataframe_html'] = df_for_html.T.to_html(escape=False, justify='center', classes='table-hover')
 
     page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0</td>','<td bgcolor="666666">0</td>')
     page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0.0</td>','<td bgcolor="666666">0</td>')
@@ -305,7 +311,7 @@ if __name__ == '__main__':
     dt_now = datetime.now(PST)
     page_dict['sync_datetime'] = dt_now.strftime('%Y/%m/%d %H:%M:%S PST')
 
-    #logger.debug(page_dict)
+    logger.debug(page_dict)
 
     # MainのHTMLを読み込み
     with open(index_org_dir, 'r') as f:
@@ -315,6 +321,7 @@ if __name__ == '__main__':
     for key, value in page_dict.items():
         index_str = index_str.replace('{% ' + key + ' %}', value)
 
+    logger.debug(index_str)
     with open(index_dir, 'w') as f:
         f.write(index_str)
     
