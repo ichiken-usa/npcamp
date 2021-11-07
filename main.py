@@ -19,18 +19,18 @@ import log
 
 production = True
 parent_dir = './'
+production_dir = '/usr/share/nginx/html/'
 
-#if production == True:
-#    driver_path = '/app/.chromedriver/bin/chromedriver'
-#else:
-#    driver_path = None
-
-dataframe_html_dir = parent_dir + 'tmp/df_available.html'
 index_org_dir = parent_dir + 'html/index_template.html'
-index_dir = parent_dir + 'index.html'
+
+if production == False:
+    index_dir = parent_dir + 'index.html'
+
+else:
+    index_dir = production_dir + 'index.html'
 
 read_data_flag = True
-cycle = 1
+cycle = 2 # 1 cycle 15 days
 
 PST = timezone(timedelta(hours=-8))
 
@@ -289,16 +289,12 @@ if __name__ == '__main__':
 
         # HTML出力 T属性で行列転置 日付をカラムへ
         # Classで直接hover用のクラスを入れる
-        #dataframe_html = df_for_html.T.to_html(dataframe_html_dir, escape=False, justify='center', classes='table-hover')
 
     page_dict = {} # {置換対象 : 中身}
 
     # 出力したHTMLを読み込んで背景色を条件に従って追加
     # テンプレ読み込んで置換する方法 https://1-notes.com/python-replace-html/
 
-    # DataframeをHTMLとして出力したものを読み込み
-    #with open(dataframe_html_dir, 'r') as f:
-    #    page_dict['dataframe_html'] = f.read()
 
     page_dict['dataframe_html'] = df_for_html.T.to_html(escape=False, justify='center', classes='table-hover')
 
