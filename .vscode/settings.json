@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "bin/python",
+    "python.pythonPath": "/Users/ichiken/VSCode/python_envs/standard/bin/python",
     "cSpell.ignoreWords": [
         "tqdm"
     ]
