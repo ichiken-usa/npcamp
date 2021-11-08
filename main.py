@@ -18,7 +18,7 @@ from selenium.webdriver.chrome.options import Options
 import log
 
 production = True
-parent_dir = './'
+parent_dir = '/home/ichi/VSCode/npcamp/'
 production_dir = '/usr/share/nginx/html/'
 
 index_org_dir = parent_dir + 'html/index_template.html'
@@ -30,7 +30,7 @@ else:
     index_dir = production_dir + 'index.html'
 
 read_data_flag = True
-cycle = 2 # 1 cycle 15 days
+cycle = 4 # 1 cycle 15 days
 
 PST = timezone(timedelta(hours=-8))
 
@@ -58,7 +58,7 @@ class RecreationGov:
             options.add_argument('--headless')
 
             self.driver = webdriver.Chrome(chrome_options=options)
-            self.driver.implicitly_wait(10) #sec
+            self.driver.implicitly_wait(20) #sec
 
         else:
             options.add_argument('--headless')
@@ -113,7 +113,7 @@ class RecreationGov:
                 # テーブルのクラス名から全要素取得
                 cls = "rec-availability-date"
                 elms = self.driver.find_elements_by_class_name(cls)
-                logger.debug(f'rec-availability-date 要素数: {len(elms)}')
+                logger.info(f'rec-availability-date 要素数: {len(elms)}')
 
 
                 # 取得した全要素を1個ずつ確認
@@ -270,7 +270,7 @@ if __name__ == '__main__':
             del header
             gc.collect()
 
-        logger.info(df_dict)
+        logger.debug(df_dict)
 
         # HTML表用のDF作成
         df_for_html = pd.DataFrame()
@@ -306,6 +306,7 @@ if __name__ == '__main__':
     # 更新時刻
     dt_now = datetime.now(PST)
     page_dict['sync_datetime'] = dt_now.strftime('%Y/%m/%d %H:%M:%S PST')
+    logger.info(page_dict['sync_datetime'])
 
     logger.debug(page_dict)
 
@@ -317,7 +318,7 @@ if __name__ == '__main__':
     for key, value in page_dict.items():
         index_str = index_str.replace('{% ' + key + ' %}', value)
 
-    logger.debug(index_str)
+    #logger.debug(index_str)
     with open(index_dir, 'w') as f:
         f.write(index_str)
     
