@@ -1,5 +1,3 @@
-# https://tanuhack.com/selenium-bs4-heroku/
-
 # Major module
 from datetime import datetime, timedelta, timezone
 from logging import getLogger
@@ -17,28 +15,30 @@ from selenium.webdriver.chrome.options import Options
 # Self-made module
 import log
 
-production = True
-parent_dir = '/home/ichi/VSCode/npcamp/'
-production_dir = '/usr/share/nginx/html/'
+PRODUCTION = False
+PARENT_DIR = './'
+PRODUCTION_DIR = '/usr/share/nginx/html/'
 
-index_org_dir = parent_dir + 'html/index_template.html'
-
-if production == False:
-    index_dir = parent_dir + 'index.html'
+if PRODUCTION == False:
+    INDEX_DIR = PARENT_DIR + 'index.html'
+    HTML_DIR = PARENT_DIR + 'pages/'
+    DELAY = 0
 
 else:
-    index_dir = production_dir + 'index.html'
+    INDEX_DIR = PRODUCTION_DIR + 'index.html'
+    HTML_DIR = PRODUCTION_DIR + 'pages/'
+    DELAY = 0.1
 
-read_data_flag = True
-cycle = 4 # 1 cycle 15 days
+READ_DATA_FLAG = True
+CYCLE = 2 # 1 cycle 15 days
 
 PST = timezone(timedelta(hours=-8))
 
 
 ### Log ###
-log_dir = parent_dir + 'Log/'
+LOG_DIR = PARENT_DIR + 'Log/'
 logger = getLogger(__name__)
-log.set_log_config(logger, log_dir, 'get_site_availability.log')
+log.set_log_config(logger, LOG_DIR, 'get_site_availability.log')
 
 class RecreationGov:
 
@@ -49,7 +49,7 @@ class RecreationGov:
 
         # Headless Chromeをあらゆる環境で起動させるオプション
         options = Options()
-        if production == True:
+        if PRODUCTION == True:
             options.add_argument('--disable-gpu')
             options.add_argument('--disable-extensions')
             options.add_argument('--proxy-server="direct://"')
@@ -57,18 +57,18 @@ class RecreationGov:
             options.add_argument('--start-maximized')
             options.add_argument('--headless')
 
-            self.driver = webdriver.Chrome(chrome_options=options)
-            self.driver.implicitly_wait(20) #sec
+            self.driver = webdriver.Chrome(options=options)
+            self.driver.implicitly_wait(10) #sec
 
         else:
-            options.add_argument('--headless')
+            #options.add_argument('--headless')
 
-            self.driver = webdriver.Chrome(chrome_options=options)
+            self.driver = webdriver.Chrome(options=options)
             self.driver.set_window_size(800,1000)
             self.driver.set_window_position(0,0)
             self.driver.implicitly_wait(10) #sec
 
-    def get_reservation(self, cycle):
+    def get_reservation(self):
 
         try:
             # Open web page
@@ -78,8 +78,13 @@ class RecreationGov:
 
             # 毎回Popupが表示されるページあり -> Popupのクローズボタンがある場合はクリックして閉じる
             # idが無いのでXPathを使用
-            xpath = '/html/body/div[9]/div/div/div/div/div/div/div/button'
+            # body > div:nth-child(14) > div > div > div > div > div > div > div > button
+            # <button data-component="Button" type="button" class="sarsa-button sarsa-modal-close-button sarsa-button-subtle sarsa-button-md" aria-label="Close modal"><span class="sarsa-button-inner-wrapper"><span aria-hidden="true" class="sarsa-button-icon-content left-icon is-only-child"><svg data-component="Icon" class="sarsa-icon rec-icon-close" viewBox="0 0 24 24" role="presentation" focusable="false" height="24" width="24"><g><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></g></svg></span><span class="sarsa-button-content"></span></span></button>
+            # /html/body/div[10]/div/div/div/div/div/div/div/button
+            #xpath = '/html/body/div[9]/div/div/div/div/div/div/div/button'
+            xpath = '/html/body/div[10]/div/div/div/div/div/div/div/button'
             self.__close_popup_by_xpath(xpath)
+
 
             # 適当なid取ってPAGE_DOWNキーを投げる
             # 別にスクロールする必要はないけど、テーブル見えないとやってる感が無い
@@ -90,8 +95,8 @@ class RecreationGov:
             availability_list = [] #[[Date][Status][1]]
 
             start = 0
-            #cycle = 1
-            for i in range(start,cycle):
+            #CYCLE = 1
+            for i in range(start,CYCLE):
 
                 # 初回だけ飛ばす
                 if i > start:
@@ -113,7 +118,7 @@ class RecreationGov:
                 # テーブルのクラス名から全要素取得
                 cls = "rec-availability-date"
                 elms = self.driver.find_elements_by_class_name(cls)
-                logger.info(f'rec-availability-date 要素数: {len(elms)}')
+                logger.debug(f'rec-availability-date 要素数: {len(elms)}')
 
 
                 # 取得した全要素を1個ずつ確認
@@ -134,6 +139,7 @@ class RecreationGov:
                     del text
                     del rtn_list
                     gc.collect()
+                    sleep(DELAY)
 
                 logger.debug(f'availability len: {len(availability_list)}')
 
@@ -244,8 +250,9 @@ class RecreationGov:
 if __name__ == '__main__':
 
 
-    if read_data_flag == True:
+    if READ_DATA_FLAG == True:
 
+        area_name = 'Yosemite'
         targets = [
             ['Yosemite Upper Pines','https://www.recreation.gov/camping/campgrounds/232447'],
             ['Yosemite Lower Pines','https://www.recreation.gov/camping/campgrounds/232450'],
@@ -264,13 +271,13 @@ if __name__ == '__main__':
             #リンク付きのヘッダー作成
             header = f'<a href="{target[1]}" target="_blank" rel="noopener noreferrer">{target[0]}</a>'
             
-            df_dict[header] = rc.get_reservation(cycle)
+            df_dict[header] = rc.get_reservation()
 
             del rc
             del header
             gc.collect()
 
-        logger.debug(df_dict)
+        logger.info(df_dict)
 
         # HTML表用のDF作成
         df_for_html = pd.DataFrame()
@@ -295,7 +302,8 @@ if __name__ == '__main__':
     # 出力したHTMLを読み込んで背景色を条件に従って追加
     # テンプレ読み込んで置換する方法 https://1-notes.com/python-replace-html/
 
-
+    # 表のHTML出力
+    
     page_dict['dataframe_html'] = df_for_html.T.to_html(escape=False, justify='center', classes='table-hover')
 
     page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0</td>','<td bgcolor="666666">0</td>')
@@ -306,21 +314,26 @@ if __name__ == '__main__':
     # 更新時刻
     dt_now = datetime.now(PST)
     page_dict['sync_datetime'] = dt_now.strftime('%Y/%m/%d %H:%M:%S PST')
-    logger.info(page_dict['sync_datetime'])
 
-    logger.debug(page_dict)
+    #logger.debug(page_dict)
+    #logger.debug(html_body)
 
-    # MainのHTMLを読み込み
-    with open(index_org_dir, 'r') as f:
-        index_str = f.read()
+    # テンプレートHTMLを読み込んで出力
+    # 入力
+    template_html_dir = HTML_DIR + 'template.html'
+    # 出力
+    table_html_dir = HTML_DIR + area_name + '.html'
+
+    with open(template_html_dir, 'r') as f:
+        html_body = f.read()
 
     # {% %}をpage_dataに置換え
     for key, value in page_dict.items():
-        index_str = index_str.replace('{% ' + key + ' %}', value)
+        html_body = html_body.replace('{% ' + key + ' %}', value)
 
-    #logger.debug(index_str)
-    with open(index_dir, 'w') as f:
-        f.write(index_str)
+    # 出力
+    with open(table_html_dir, 'w') as f:
+        f.write(html_body)
     
 
 

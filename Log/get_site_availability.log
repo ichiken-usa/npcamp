@@ -1678,3 +1678,616 @@ Stacktrace:
 [2021-11-07 18:53:53,422][    INFO][__main__] 2021/11/07 18:53:53 PST
 [2021-11-07 21:00:04,418][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
 [2021-11-07 21:01:14,167][    INFO][__main__] rec-availability-date 要素数: 3540
+[2021-11-07 21:27:08,327][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-07 21:27:54,028][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-07 21:28:08,672][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-07 21:28:20,956][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-07          0          236
+2021-11-08         16          220
+2021-11-09         10          226
+2021-11-10          0          236
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          0          236
+2021-11-15          0          236
+2021-11-16          0          236
+2021-11-17          0          236
+2021-11-18          0          236
+2021-11-19          0          236
+2021-11-20          0          236
+2021-11-21          0          236, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           63          0
+2021-11-08           63          0
+2021-11-09           63          0
+2021-11-10           63          0
+2021-11-11           63          0
+2021-11-12           63          0
+2021-11-13           63          0
+2021-11-14           63          0
+2021-11-15           63          0
+2021-11-16           63          0
+2021-11-17           63          0
+2021-11-18           63          0
+2021-11-19           63          0
+2021-11-20           63          0
+2021-11-21           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           57          0
+2021-11-08           57          0
+2021-11-09           57          0
+2021-11-10           57          0
+2021-11-11           57          0
+2021-11-12           57          0
+2021-11-13           57          0
+2021-11-14           57          0
+2021-11-15           57          0
+2021-11-16           57          0
+2021-11-17           57          0
+2021-11-18           57          0
+2021-11-19           57          0
+2021-11-20           57          0
+2021-11-21           57          0}
+[2021-11-07 21:35:02,382][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-07 21:35:48,945][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-07 21:36:03,925][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-07 21:36:16,139][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-07          0          236
+2021-11-08         16          220
+2021-11-09         10          226
+2021-11-10          0          236
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          0          236
+2021-11-15          0          236
+2021-11-16          0          236
+2021-11-17          0          236
+2021-11-18          0          236
+2021-11-19          0          236
+2021-11-20          0          236
+2021-11-21          0          236, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           63          0
+2021-11-08           63          0
+2021-11-09           63          0
+2021-11-10           63          0
+2021-11-11           63          0
+2021-11-12           63          0
+2021-11-13           63          0
+2021-11-14           63          0
+2021-11-15           63          0
+2021-11-16           63          0
+2021-11-17           63          0
+2021-11-18           63          0
+2021-11-19           63          0
+2021-11-20           63          0
+2021-11-21           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           57          0
+2021-11-08           57          0
+2021-11-09           57          0
+2021-11-10           57          0
+2021-11-11           57          0
+2021-11-12           57          0
+2021-11-13           57          0
+2021-11-14           57          0
+2021-11-15           57          0
+2021-11-16           57          0
+2021-11-17           57          0
+2021-11-18           57          0
+2021-11-19           57          0
+2021-11-20           57          0
+2021-11-21           57          0}
+[2021-11-07 21:45:20,746][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-07 21:46:09,410][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-07 21:46:24,197][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-07 21:46:36,169][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-07          0          236
+2021-11-08         16          220
+2021-11-09         11          225
+2021-11-10          0          236
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          1          235
+2021-11-15          0          236
+2021-11-16          0          236
+2021-11-17          0          236
+2021-11-18          0          236
+2021-11-19          0          236
+2021-11-20          0          236
+2021-11-21          0          236, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           63          0
+2021-11-08           63          0
+2021-11-09           63          0
+2021-11-10           63          0
+2021-11-11           63          0
+2021-11-12           63          0
+2021-11-13           63          0
+2021-11-14           63          0
+2021-11-15           63          0
+2021-11-16           63          0
+2021-11-17           63          0
+2021-11-18           63          0
+2021-11-19           63          0
+2021-11-20           63          0
+2021-11-21           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           57          0
+2021-11-08           57          0
+2021-11-09           57          0
+2021-11-10           57          0
+2021-11-11           57          0
+2021-11-12           57          0
+2021-11-13           57          0
+2021-11-14           57          0
+2021-11-15           57          0
+2021-11-16           57          0
+2021-11-17           57          0
+2021-11-18           57          0
+2021-11-19           57          0
+2021-11-20           57          0
+2021-11-21           57          0}
+[2021-11-07 22:24:44,934][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-07 22:26:18,538][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-07 22:26:51,026][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-07 22:27:19,577][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-07          0          236
+2021-11-08         15          221
+2021-11-09         11          225
+2021-11-10          0          236
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          1          235
+2021-11-15          0          236
+2021-11-16          0          236
+2021-11-17          0          236
+2021-11-18          0          236
+2021-11-19          0          236
+2021-11-20          0          236
+2021-11-21          0          236
+2021-11-22          0          236
+2021-11-23          0          236
+2021-11-24          0          236
+2021-11-25          0          236
+2021-11-26          0          236
+2021-11-27          0          236
+2021-11-28          0          236
+2021-11-29          0          236
+2021-11-30          2          234
+2021-12-01          0          236
+2021-12-02          0          236
+2021-12-03          0          236
+2021-12-04          0          236
+2021-12-05          5          231
+2021-12-06          8          228, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           63          0
+2021-11-08           63          0
+2021-11-09           63          0
+2021-11-10           63          0
+2021-11-11           63          0
+2021-11-12           63          0
+2021-11-13           63          0
+2021-11-14           63          0
+2021-11-15           63          0
+2021-11-16           63          0
+2021-11-17           63          0
+2021-11-18           63          0
+2021-11-19           63          0
+2021-11-20           63          0
+2021-11-21           63          0
+2021-11-22           63          0
+2021-11-23           63          0
+2021-11-24           63          0
+2021-11-25           63          0
+2021-11-26           63          0
+2021-11-27           63          0
+2021-11-28           63          0
+2021-11-29           63          0
+2021-11-30           63          0
+2021-12-01           63          0
+2021-12-02           63          0
+2021-12-03           63          0
+2021-12-04           63          0
+2021-12-05           63          0
+2021-12-06           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2021-11-07           57          0
+2021-11-08           57          0
+2021-11-09           57          0
+2021-11-10           57          0
+2021-11-11           57          0
+2021-11-12           57          0
+2021-11-13           57          0
+2021-11-14           57          0
+2021-11-15           57          0
+2021-11-16           57          0
+2021-11-17           57          0
+2021-11-18           57          0
+2021-11-19           57          0
+2021-11-20           57          0
+2021-11-21           57          0
+2021-11-22           57          0
+2021-11-23           57          0
+2021-11-24           57          0
+2021-11-25           57          0
+2021-11-26           57          0
+2021-11-27           57          0
+2021-11-28           57          0
+2021-11-29           57          0
+2021-11-30           57          0
+2021-12-01           57          0
+2021-12-02           57          0
+2021-12-03           57          0
+2021-12-04           57          0
+2021-12-05           57          0
+2021-12-06           57          0}
+[2021-11-08 20:47:08,945][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-08 20:48:40,666][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-08 20:49:12,027][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-08 20:49:40,937][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-08         18          218
+2021-11-09          8          228
+2021-11-10          0          236
+2021-11-11          0          236
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          0          236
+2021-11-15          0          236
+2021-11-16          0          236
+2021-11-17          0          236
+2021-11-18          0          236
+2021-11-19          0          236
+2021-11-20          0          236
+2021-11-21          0          236
+2021-11-22          0          236
+2021-11-23          0          236
+2021-11-24          0          236
+2021-11-25          0          236
+2021-11-26          0          236
+2021-11-27          0          236
+2021-11-28          0          236
+2021-11-29          0          236
+2021-11-30          2          234
+2021-12-01          0          236
+2021-12-02          1          235
+2021-12-03          0          236
+2021-12-04          0          236
+2021-12-05          4          232
+2021-12-06          5          231
+2021-12-07          7          229, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2022-04-14           63          0
+2022-04-15           63          0
+2022-04-16           63          0
+2022-04-17           63          0
+2022-04-18           63          0
+2022-04-19           63          0
+2022-04-20           63          0
+2022-04-21           63          0
+2022-04-22           63          0
+2022-04-23           63          0
+2022-04-24           63          0
+2022-04-25           63          0
+2022-04-26           63          0
+2022-04-27           63          0
+2022-04-28           63          0
+2022-04-29           63          0
+2022-04-30           63          0
+2022-05-01           63          0
+2022-05-02           63          0
+2022-05-03           63          0
+2022-05-04           63          0
+2022-05-05           63          0
+2022-05-06           63          0
+2022-05-07           63          0
+2022-05-08           63          0
+2022-05-09           63          0
+2022-05-10           63          0
+2022-05-11           63          0
+2022-05-12           63          0
+2022-05-13           63          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2022-04-11           57          0
+2022-04-12           57          0
+2022-04-13           57          0
+2022-04-14           57          0
+2022-04-15           57          0
+2022-04-16           57          0
+2022-04-17           57          0
+2022-04-18           57          0
+2022-04-19           57          0
+2022-04-20           57          0
+2022-04-21           57          0
+2022-04-22           57          0
+2022-04-23           57          0
+2022-04-24           57          0
+2022-04-25           57          0
+2022-04-26           57          0
+2022-04-27           57          0
+2022-04-28           57          0
+2022-04-29           57          0
+2022-04-30           57          0
+2022-05-01           57          0
+2022-05-02           57          0
+2022-05-03           57          0
+2022-05-04           57          0
+2022-05-05           57          0
+2022-05-06           57          0
+2022-05-07           57          0
+2022-05-08           57          0
+2022-05-09           57          0
+2022-05-10           57          0}
+[2021-11-12 21:44:24,385][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-12 21:44:40,378][   ERROR][__main__] Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[9]/div/div/div/div/div/div/div/button"}
+  (Session info: headless chrome=95.0.4638.69)
+Traceback (most recent call last):
+  File "/Users/ichiken/VSCode/python_envs/camp/main.py", line 203, in __close_popup_by_xpath
+    if self.driver.find_element_by_xpath(xpath).is_displayed():
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[9]/div/div/div/div/div/div/div/button"}
+  (Session info: headless chrome=95.0.4638.69)
+
+[2021-11-12 21:45:29,465][   ERROR][__main__] Message: element not interactable
+  (Session info: headless chrome=95.0.4638.69)
+Traceback (most recent call last):
+  File "/Users/ichiken/VSCode/python_envs/camp/main.py", line 194, in __click_by_xpath
+    elm.click()
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: headless chrome=95.0.4638.69)
+
+[2021-11-12 21:45:42,230][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-12 21:46:29,024][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-12 21:46:43,986][   ERROR][__main__] Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[9]/div/div/div/div/div/div/div/button"}
+  (Session info: chrome=95.0.4638.69)
+Traceback (most recent call last):
+  File "/Users/ichiken/VSCode/python_envs/camp/main.py", line 203, in __close_popup_by_xpath
+    if self.driver.find_element_by_xpath(xpath).is_displayed():
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[9]/div/div/div/div/div/div/div/button"}
+  (Session info: chrome=95.0.4638.69)
+
+[2021-11-12 21:46:54,065][   ERROR][__main__] Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+Traceback (most recent call last):
+  File "/Users/ichiken/VSCode/python_envs/camp/main.py", line 172, in __send_key_by_id
+    elm.send_keys(text)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 477, in send_keys
+    self._execute(Command.SEND_KEYS_TO_ELEMENT,
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Users/ichiken/VSCode/python_envs/standard/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=95.0.4638.69)
+
+[2021-11-12 21:58:36,739][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-12 22:00:06,042][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-12 22:00:41,556][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-12 22:01:17,306][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-12          0          236
+2021-11-13          0          236
+2021-11-14          1          235
+2021-11-15          1          235
+2021-11-16          1          235
+2021-11-17          1          235
+2021-11-18          1          235
+2021-11-19          1          235
+2021-11-20          1          235
+2021-11-21          1          235
+2021-11-22          1          235
+2021-11-23          1          235
+2021-11-24          0          236
+2021-11-25          0          236
+2021-11-26          0          236
+2021-11-27          0          236
+2021-11-28          0          236
+2021-11-29          0          236
+2021-11-30          0          236
+2021-12-01          0          236
+2021-12-02          0          236
+2021-12-03          0          236
+2021-12-04          0          236
+2021-12-05          0          236
+2021-12-06          3          233
+2021-12-07          3          233
+2021-12-08          4          232
+2021-12-09         10          226
+2021-12-10          0          236
+2021-12-11          0          236, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2022-04-14           73          0
+2022-04-15           73          0
+2022-04-16           73          0
+2022-04-17           73          0
+2022-04-18           73          0
+2022-04-19           73          0
+2022-04-20           73          0
+2022-04-21           73          0
+2022-04-22           73          0
+2022-04-23           73          0
+2022-04-24           73          0
+2022-04-25           73          0
+2022-04-26           73          0
+2022-04-27           73          0
+2022-04-28           73          0
+2022-04-29           73          0
+2022-04-30           73          0
+2022-05-01           73          0
+2022-05-02           73          0
+2022-05-03           73          0
+2022-05-04           73          0
+2022-05-05           73          0
+2022-05-06           73          0
+2022-05-07           73          0
+2022-05-08           73          0
+2022-05-09           73          0
+2022-05-10           73          0
+2022-05-11           73          0
+2022-05-12           73          0
+2022-05-13           73          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2022-04-11           80          0
+2022-04-12           80          0
+2022-04-13           80          0
+2022-04-14           80          0
+2022-04-15           80          0
+2022-04-16           80          0
+2022-04-17           80          0
+2022-04-18           80          0
+2022-04-19           80          0
+2022-04-20           80          0
+2022-04-21           80          0
+2022-04-22           80          0
+2022-04-23           80          0
+2022-04-24           80          0
+2022-04-25           80          0
+2022-04-26           80          0
+2022-04-27           80          0
+2022-04-28           80          0
+2022-04-29           80          0
+2022-04-30           80          0
+2022-05-01           80          0
+2022-05-02           80          0
+2022-05-03           80          0
+2022-05-04           80          0
+2022-05-05           80          0
+2022-05-06           80          0
+2022-05-07           80          0
+2022-05-08           80          0
+2022-05-09           80          0
+2022-05-10           80          0}
+[2021-11-12 22:09:18,822][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-22 21:43:12,669][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
+[2021-11-22 21:44:47,144][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232450
+[2021-11-22 21:45:23,365][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232449
+[2021-11-22 21:45:59,136][    INFO][__main__] {'<a href="https://www.recreation.gov/camping/campgrounds/232447" target="_blank" rel="noopener noreferrer">Yosemite Upper Pines</a>': Status      Available  Unavailable
+Datetime                          
+2021-11-22          0          236
+2021-11-23          0          236
+2021-11-24          0          236
+2021-11-25          0          236
+2021-11-26          0          236
+2021-11-27          0          236
+2021-11-28          7          229
+2021-11-29         10          226
+2021-11-30          7          229
+2021-12-01         17          219
+2021-12-02         17          219
+2021-12-03          2          234
+2021-12-04          0          236
+2021-12-05         13          223
+2021-12-06         12          224
+2021-12-07         14          222
+2021-12-08         20          216
+2021-12-09         23          213
+2021-12-10          1          235
+2021-12-11          0          236
+2021-12-12         20          216
+2021-12-13         22          214
+2021-12-14         17          219
+2021-12-15         19          217
+2021-12-16         18          218
+2021-12-17          5          231
+2021-12-18          1          235
+2021-12-19          4          232
+2021-12-20          8          228
+2021-12-21         10          226, '<a href="https://www.recreation.gov/camping/campgrounds/232450" target="_blank" rel="noopener noreferrer">Yosemite Lower Pines</a>': Status      Unavailable  Available
+Datetime                          
+2022-04-14           73          0
+2022-04-15           73          0
+2022-04-16           73          0
+2022-04-17           73          0
+2022-04-18           73          0
+2022-04-19           73          0
+2022-04-20           73          0
+2022-04-21           73          0
+2022-04-22           73          0
+2022-04-23           73          0
+2022-04-24           73          0
+2022-04-25           73          0
+2022-04-26           73          0
+2022-04-27           73          0
+2022-04-28           73          0
+2022-04-29           73          0
+2022-04-30           73          0
+2022-05-01           73          0
+2022-05-02           73          0
+2022-05-03           73          0
+2022-05-04           73          0
+2022-05-05           73          0
+2022-05-06           73          0
+2022-05-07           73          0
+2022-05-08           73          0
+2022-05-09           73          0
+2022-05-10           73          0
+2022-05-11           73          0
+2022-05-12           73          0
+2022-05-13           73          0, '<a href="https://www.recreation.gov/camping/campgrounds/232449" target="_blank" rel="noopener noreferrer">Yosemite North Pines</a>': Status      Unavailable  Available
+Datetime                          
+2022-04-11           80          0
+2022-04-12           80          0
+2022-04-13           80          0
+2022-04-14           80          0
+2022-04-15           80          0
+2022-04-16           80          0
+2022-04-17           80          0
+2022-04-18           80          0
+2022-04-19           80          0
+2022-04-20           80          0
+2022-04-21           80          0
+2022-04-22           80          0
+2022-04-23           80          0
+2022-04-24           80          0
+2022-04-25           80          0
+2022-04-26           80          0
+2022-04-27           80          0
+2022-04-28           80          0
+2022-04-29           80          0
+2022-04-30           80          0
+2022-05-01           80          0
+2022-05-02           80          0
+2022-05-03           80          0
+2022-05-04           80          0
+2022-05-05           80          0
+2022-05-06           80          0
+2022-05-07           80          0
+2022-05-08           80          0
+2022-05-09           80          0
+2022-05-10           80          0}
+[2021-11-22 22:09:40,418][    INFO][__main__] Open: https://www.recreation.gov/camping/campgrounds/232447
