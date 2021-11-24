@@ -2,5 +2,8 @@
     "python.pythonPath": "/Users/ichiken/VSCode/python_envs/standard/bin/python",
     "cSpell.ignoreWords": [
         "tqdm"
-    ]
+    ],
+    "python.analysis.extraPaths": [
+        "/Users/ichiken/VSCode/python_envs/camp/Script",
+    ],
 }

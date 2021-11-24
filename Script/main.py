@@ -16,7 +16,7 @@ from selenium.webdriver.chrome.options import Options
 import log
 
 PRODUCTION = False
-PARENT_DIR = './'
+PARENT_DIR = './Web/'
 PRODUCTION_DIR = '/usr/share/nginx/html/'
 
 if PRODUCTION == False:
@@ -30,13 +30,13 @@ else:
     DELAY = 0.1
 
 READ_DATA_FLAG = True
-CYCLE = 2 # 1 cycle 15 days
+CYCLE = 1 # 1 cycle 15 days
 
 PST = timezone(timedelta(hours=-8))
 
 
 ### Log ###
-LOG_DIR = PARENT_DIR + 'Log/'
+LOG_DIR = './Script/Log/'
 logger = getLogger(__name__)
 log.set_log_config(logger, LOG_DIR, 'get_site_availability.log')
 
