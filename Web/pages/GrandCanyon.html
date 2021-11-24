@@ -21,8 +21,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 
 
   <title>NPCamp Enjoy your camping</title>
@@ -37,9 +37,9 @@
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- Material Kit CSS -->
-  <link href="./assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+  <link href="../assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./Web/assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
   <link href='//use.fontawesome.com/releases/v5.11.0/css/all.css' rel='stylesheet' type='text/css' />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
@@ -78,7 +78,7 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
                     Pages
-                    <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                    <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
                   </a>
                   <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
                     aria-labelledby="dropdownMenuPages">
@@ -136,7 +136,7 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="material-icons opacity-6 me-2 text-md">article</i>
                     About
-                    <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                    <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
                   </a>
                   <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
                     aria-labelledby="dropdownMenuPages">
@@ -213,16 +213,13 @@
 
   <!-- Header -->
   <header class="header-2">
-    <div class="page-header min-vh-75 relative" style="background-image: url('./assets/img/Yosemite.jpg')"
+    <div class="page-header min-vh-45 relative" style="background-image: url('../assets/img/Yosemite.jpg')"
       loading="lazy">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">ENJOY YOUR CAMPING</h1>
-            <p class="lead text-white mt-3">Make your plan easy by aggregating availability of campgrounds
-              automatically. </p>
-          </div>
+            <h1 class="text-white pt-3 mt-n5">Campsite Availability</h1>
         </div>
       </div>
     </div>
@@ -231,115 +228,90 @@
   <!-- Main body -->
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
 
-    <!-- Count -->
-    <section class="pt-3 pb-4" id="count-stats">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9 mx-auto py-3">
-            <div class="row">
-              <div class="col-md-4 position-relative">
-                <div class="p-3 text-center">
-                  <h1 class="text-gradient text-info"><span id="state1" countTo="1">0</span></h1>
-                  <h5 class="mt-3">National Parks</h5>
-                </div>
-                <hr class="vertical dark">
-              </div>
-              <div class="col-md-4 position-relative">
-                <div class="p-3 text-center">
-                  <h1 class="text-gradient text-info"> <span id="state2" countTo="3">0</span>+</h1>
-                  <h5 class="mt-3">Campgrounds</h5>
-                </div>
-                <hr class="vertical dark">
-              </div>
-              <div class="col-md-4">
-                <div class="p-3 text-center">
-                  <h1 class="text-gradient text-info"><span id="state3" countTo="4">0</span>+</h1>
-                  <h5 class="mt-3">Weeks</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Yosemite -->
-    <section class="my-5 py-5">
-      <div class="container">
-        <div class="row align-items-center">
-
-          <div class="col-md-4">
-            <div class="rotating-card-container">
-              <div class="card card-rotate card-background card-background-mask-dark shadow-info mt-md-0 mt-5">
-                <div class="front front-background"
-                  style="background-image: url(./assets/img/Yosemite.jpg); background-size: cover;">
-                  <div class="card-body py-5 text-center">
-                    <h3 class="text-white">Yosemite</h3>
-                    <p class="text-white opacity-8">Yosemite is one of the largest and least fragmented habitat blocks in the Sierra Nevada, and the park supports a diversity of plants and animals. </p>
-                  </div>
-                </div>
-                <div class="back back-background"
-                  style="background-image: url(./assets/img/Yosemite.jpg); background-size: cover;">
-                  <div class="card-body text-center">
-                    <h3 class="text-white">Discover<br/>Yosemite</h3>
-                    <a href="./pages/Yosemite.html" target="_blank"
-                      class="btn btn-white btn-lg mx-auto">Check availability</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="rotating-card-container">
-              <div class="card card-rotate card-background card-background-mask-dark shadow-info mt-md-0 mt-5">
-                <div class="front front-background"
-                  style="background-image: url(./assets/img/Yosemite.jpg); background-size: cover;">
-                  <div class="card-body py-5 text-center">
-                    <h3 class="text-white">Yosemite</h3>
-                    <p class="text-white opacity-8">Yosemite is one of the largest and least fragmented habitat blocks in the Sierra Nevada, and the park supports a diversity of plants and animals. </p>
-                  </div>
-                </div>
-                <div class="back back-background"
-                  style="background-image: url(./assets/img/Yosemite.jpg); background-size: cover;">
-                  <div class="card-body text-center">
-                    <h3 class="text-white">Discover<br/>Yosemite</h3>
-                    <a href="./pages/Yosemite.html" target="_blank"
-                      class="btn btn-white btn-lg mx-auto">Check availability</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="rotating-card-container">
-              <div class="card card-rotate card-background card-background-mask-dark shadow-info mt-md-0 mt-5">
-                <div class="front front-background"
-                  style="background-image: url(./assets/img/Yosemite.jpg); background-size: cover;">
-                  <div class="card-body py-5 text-center">
-                    <h3 class="text-white">Yosemite</h3>
-                    <p class="text-white opacity-8">Yosemite is one of the largest and least fragmented habitat blocks in the Sierra Nevada, and the park supports a diversity of plants and animals. </p>
-                  </div>
-                </div>
-                <div class="back back-background"
-                  style="background-image: url(./assets/img/Yosemite.jpg); background-size: cover;">
-                  <div class="card-body text-center">
-                    <h3 class="text-white">Discover<br/>Yosemite</h3>
-                    <a href="./pages/Yosemite.html" target="_blank"
-                      class="btn btn-white btn-lg mx-auto">Check availability</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
- 
-
+  <!-- Dataframe table from Selenium-->
+  <div class="container">
+    <p style="font-size: small;"><i class="fas fa-sync-alt"></i>  2021/11/23 22:01:10 PST</p>
+    <div class="table-responsive" style="font-size: small;">
+      <table border="1" class="dataframe table-hover">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Datetime</th>
+      <th>11/23<br/>Tue</th>
+      <th>11/24<br/>Wed</th>
+      <th>11/25<br/>Thu</th>
+      <th>11/26<br/>Fri</th>
+      <th>11/27<br/>Sat</th>
+      <th>11/28<br/>Sun</th>
+      <th>11/29<br/>Mon</th>
+      <th>11/30<br/>Tue</th>
+      <th>12/01<br/>Wed</th>
+      <th>12/02<br/>Thu</th>
+      <th>12/03<br/>Fri</th>
+      <th>12/04<br/>Sat</th>
+      <th>12/05<br/>Sun</th>
+      <th>12/06<br/>Mon</th>
+      <th>12/07<br/>Tue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="https://www.recreation.gov/camping/campgrounds/232490" target="_blank" rel="noopener noreferrer">Grand Canyon Mather Campground</a></th>
+      <td>37</td>
+      <td>48</td>
+      <td>11</td>
+      <td>10</td>
+      <td>71</td>
+      <td>229</td>
+      <td>262</td>
+      <td>288</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+    </tr>
+    <tr>
+      <th><a href="https://www.recreation.gov/camping/campgrounds/258825" target="_blank" rel="noopener noreferrer">Grand Canyon Desert View Campground</a></th>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+    </tr>
+    <tr>
+      <th><a href="https://www.recreation.gov/camping/campgrounds/232489" target="_blank" rel="noopener noreferrer">Grand Canyon North Rim Campground</a></th>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+      <td bgcolor="666666">0</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
 
   </div>
 
@@ -436,31 +408,31 @@
 
 
 <!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
-<script src="./assets/js/plugins/countup.min.js"></script>
+<script src="../assets/js/plugins/countup.min.js"></script>
 
 
 
 
 
-<script src="./assets/js/plugins/choices.min.js"></script>
+<script src="../assets/js/plugins/choices.min.js"></script>
 
 
 
-<script src="./assets/js/plugins/prism.min.js"></script>
-<script src="./assets/js/plugins/highlight.min.js"></script>
+<script src="../assets/js/plugins/prism.min.js"></script>
+<script src="../assets/js/plugins/highlight.min.js"></script>
 
 
 
 <!--  Plugin for Parallax, full documentation here: https://github.com/dixonandmoe/rellax -->
-<script src="./assets/js/plugins/rellax.min.js"></script>
+<script src="../assets/js/plugins/rellax.min.js"></script>
 <!--  Plugin for TiltJS, full documentation here: https://gijsroge.github.io/tilt.js/ -->
-<script src="./assets/js/plugins/tilt.min.js"></script>
+<script src="../assets/js/plugins/tilt.min.js"></script>
 <!--  Plugin for Selectpicker - ChoicesJS, full documentation here: https://github.com/jshjohnson/Choices -->
 <script src="./assets/js/plugins/choices.min.js"></script>
 
 
 <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
-<script src="./assets/js/plugins/parallax.min.js"></script>
+<script src="../assets/js/plugins/parallax.min.js"></script>
 
 
 
@@ -476,7 +448,7 @@
 <!--  Google Maps Plugin    -->
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
-<script src="./assets/js/material-kit.min.js?v=3.0.0" type="text/javascript"></script>
+<script src="../assets/js/material-kit.min.js?v=3.0.0" type="text/javascript"></script>
 
 
 <script type="text/javascript">
@@ -508,3 +480,4 @@
 </script>
 
 </html>
+

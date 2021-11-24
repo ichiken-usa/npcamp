@@ -247,55 +247,44 @@ class RecreationGov:
     
         return dt, status, 1
 
-if __name__ == '__main__':
 
+def update_np_availability(area_name, targets):
 
-    if READ_DATA_FLAG == True:
+    df_dict = {} # {キャンプ場名: df index=Datetime columns=[Available, Unavailable]}
 
-        area_name = 'Yosemite'
-        targets = [
-            ['Yosemite Upper Pines','https://www.recreation.gov/camping/campgrounds/232447'],
-            ['Yosemite Lower Pines','https://www.recreation.gov/camping/campgrounds/232450'],
-            ['Yosemite North Pines','https://www.recreation.gov/camping/campgrounds/232449'],
-            #['Grand Canyon Mather Campground', 'https://www.recreation.gov/camping/campgrounds/232490'],
-            #['Grand Canyon Desert View Campground', 'https://www.recreation.gov/camping/campgrounds/258825'],
-            #['Grand Canyon North Rim Campground', 'https://www.recreation.gov/camping/campgrounds/232489'],
-            ]
+    # targetsを1個ずつ取得
+    for target in targets:
+        rc = RecreationGov(target)
 
-        df_dict = {} # {キャンプ場名: df index=Datetime columns=[Available, Unavailable]}
-
-        # targetsを1個ずつ取得
-        for target in targets:
-            rc = RecreationGov(target)
-
-            #リンク付きのヘッダー作成
-            header = f'<a href="{target[1]}" target="_blank" rel="noopener noreferrer">{target[0]}</a>'
-            
-            df_dict[header] = rc.get_reservation()
-
-            del rc
-            del header
-            gc.collect()
-
-        logger.info(df_dict)
-
-        # HTML表用のDF作成
-        df_for_html = pd.DataFrame()
-        for k, v_df in df_dict.items():
-            # 文字列にしておかないと勝手に小数点が入ったり入らなかったりする
-            #df_for_html[k] = v_df['Available'].apply(lambda x: str(int(x)))
-            df_for_html[k] = v_df['Available'].astype(str)
-
-        # NaNを0埋め
-        df_for_html = df_for_html.fillna(0)
+        #リンク付きのヘッダー作成
+        header = f'<a href="{target[1]}" target="_blank" rel="noopener noreferrer">{target[0]}</a>'
         
-        # HTML出力用にDatetimeのindexを文字列にして上書き そのままだと00:00:00も出力される
-        # https://note.nkmk.me/python-datetime-day-locale-function/
-        df_for_html.index = df_for_html.index.strftime('%m/%d<br/>%a')
-        #logger.debug(df_for_html)
+        df_dict[header] = rc.get_reservation()
 
-        # HTML出力 T属性で行列転置 日付をカラムへ
-        # Classで直接hover用のクラスを入れる
+        del rc
+        del header
+        gc.collect()
+
+    logger.info(df_dict)
+
+    # HTML表用のDF作成
+    df_for_html = pd.DataFrame()
+    for k, v_df in df_dict.items():
+        # 文字列にしておかないと勝手に小数点が入ったり入らなかったりする
+        #df_for_html[k] = v_df['Available'].apply(lambda x: str(int(x)))
+        df_for_html[k] = v_df['Available'].astype(str)
+
+    # NaNを0埋め
+    df_for_html = df_for_html.fillna(0)
+    
+    # HTML出力用にDatetimeのindexを文字列にして上書き そのままだと00:00:00も出力される
+    # https://note.nkmk.me/python-datetime-day-locale-function/
+    df_for_html.index = df_for_html.index.strftime('%m/%d<br/>%a')
+    #logger.debug(df_for_html)
+
+    # HTML出力 T属性で行列転置 日付をカラムへ
+    # Classで直接hover用のクラスを入れる
+
 
     page_dict = {} # {置換対象 : 中身}
 
@@ -337,6 +326,24 @@ if __name__ == '__main__':
     
 
 
-    # Bootstrapテーブルの横スクロール 
-    # https://marmooo.blogspot.com/2019/05/bootstrap.html
-    # https://qumeru.com/magazine/354
+if __name__ == '__main__':
+
+
+    area_name = 'Yosemite'
+    targets = [
+        ['Yosemite Upper Pines','https://www.recreation.gov/camping/campgrounds/232447'],
+        ['Yosemite Lower Pines','https://www.recreation.gov/camping/campgrounds/232450'],
+        ['Yosemite North Pines','https://www.recreation.gov/camping/campgrounds/232449'],
+        ]
+
+    update_np_availability(area_name,targets)
+
+
+    area_name = 'GrandCanyon'
+    targets = [
+        ['Grand Canyon Mather Campground', 'https://www.recreation.gov/camping/campgrounds/232490'],
+        ['Grand Canyon Desert View Campground', 'https://www.recreation.gov/camping/campgrounds/258825'],
+        ['Grand Canyon North Rim Campground', 'https://www.recreation.gov/camping/campgrounds/232489'],
+        ]
+
+    update_np_availability(area_name,targets)
