@@ -17,18 +17,17 @@ from selenium.webdriver.chrome.options import Options
 # Self-made module
 import log
 
-PRODUCTION = False
+PRODUCTION = True
 PARENT_DIR = './Web/'
-PRODUCTION_DIR = '/usr/share/nginx/html/'
+#PRODUCTION_DIR = '/usr/share/nginx/html/'
 
-if PRODUCTION == False:
-    INDEX_DIR = PARENT_DIR + 'index.html'
-    HTML_DIR = PARENT_DIR + 'pages/'
+INDEX_DIR = PARENT_DIR + 'index.html'
+HTML_DIR = PARENT_DIR + 'pages/'
+
+if PRODUCTION == False:    
     DELAY = 0
 
 else:
-    INDEX_DIR = PRODUCTION_DIR + 'index.html'
-    HTML_DIR = PRODUCTION_DIR + 'pages/'
     DELAY = 0.1
 
 READ_DATA_FLAG = True
