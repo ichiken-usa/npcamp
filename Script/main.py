@@ -19,7 +19,6 @@ import log
 
 PRODUCTION = True
 PARENT_DIR = './Web/'
-#PRODUCTION_DIR = '/usr/share/nginx/html/'
 
 INDEX_DIR = PARENT_DIR + 'index.html'
 HTML_DIR = PARENT_DIR + 'pages/'
@@ -334,15 +333,26 @@ def update_np_availability(park):
 
 if __name__ == '__main__':
 
-    # キャンプ場をまとめたJSONファイル読み出し
-    dir = os.path.join(os.path.dirname(__file__), 'sites.json')
-    with open(dir, mode="r") as f:
-        json_obj = json.load(f)
+    while True:
 
-    logger.debug(json_obj)
+        try:        
+            # キャンプ場をまとめたJSONファイル読み出し
+            dir = os.path.join(os.path.dirname(__file__), 'sites.json')
+            with open(dir, mode="r") as f:
+                json_obj = json.load(f)
 
-    # 各国立公園ごとにデータを渡してHTMLファイルを作成
-    for park in json_obj["parks"]:
+            logger.debug(json_obj)
 
-        logger.info(f'Area: {park["area"]}')
-        update_np_availability(park)
+            # 各国立公園ごとにデータを渡してHTMLファイルを作成
+            for park in json_obj["parks"]:
+
+                logger.info(f'Area: {park["area"]}')
+                update_np_availability(park)
+
+            # 非本番の場合はループしない
+            if PRODUCTION == False:
+                break
+
+        except Exception as e:
+            logger.exception(e)
+            sleep(60)
