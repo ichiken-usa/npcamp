@@ -1,11 +1,41 @@
 {
     "parks": [
         {
+            "area": "Lassen_Volcanic",
+            "sites": [
+                {
+                    "name": "Manzanita Lake",
+                    "url": "https://www.recreation.gov/camping/campgrounds/234039"
+                },
+                {
+                    "name": "Manzanita Lake Camping Cabins",
+                    "url": "https://www.recreation.gov/camping/campgrounds/233257"
+                },
+                {
+                    "name": "Summit Lake North",
+                    "url": "https://www.recreation.gov/camping/campgrounds/234041"
+                },
+                {
+                    "name":"Summit Lake South",
+                    "url":"https://www.recreation.gov/camping/campgrounds/234040"
+                }
+            ]
+        },
+        {
             "area": "Yosemite",
             "sites": [
                 {
                     "name": "Yosemite Upper Pines",
                     "url": "https://www.recreation.gov/camping/campgrounds/232447"
+                }
+            ]
+        },
+        {
+            "area": "Death_Valley",
+            "sites": [
+                {
+                    "name": "Furnace Creek Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232496"
                 }
             ]
         },
@@ -22,5 +52,7 @@
                 }
             ]
         }
+
+
     ]
 }
