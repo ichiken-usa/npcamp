@@ -52,7 +52,7 @@
             <div class="row">
               <div class="col-md-4 position-relative">
                 <div class="p-3 text-center">
-                  <h1 class="text-gradient text-info"><span id="state1" countTo="1">0</span></h1>
+                  <h1 class="text-gradient text-info"><span id="state1" countTo="2">0</span></h1>
                   <h5 class="mt-3">National Parks</h5>
                 </div>
                 <hr class="vertical dark">
@@ -66,7 +66,7 @@
               </div>
               <div class="col-md-4">
                 <div class="p-3 text-center">
-                  <h1 class="text-gradient text-info"><span id="state3" countTo="4">0</span>+</h1>
+                  <h1 class="text-gradient text-info"><span id="state3" countTo="2">0</span>+</h1>
                   <h5 class="mt-3">Weeks</h5>
                 </div>
               </div>
