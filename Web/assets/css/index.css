@@ -1,22 +1,21 @@
+.dataframe {
+    border-width: 1px;
+}
+
+.dataframe th{
+    border-width: 1px;
+}
+
 .dataframe th:first-child{
-    text-align: left;
+    text-align: left ;
     /* 表左列固定 背景色ないと透けて文字が重なる*/
-    position: sticky;
-    left: 0;
+    position: sticky ;
+    left: 0 ;
     background-color: white;
 }
 
 .dataframe td{
     text-align: center;
+    border-width: 1px;
 }
 
-.jumbotron {
-    background:url(./Yosemite.jpg) center no-repeat; background-size: cover;
-}
-
-iframe {
-    border:none;
-    width: 100%;
-    padding:0;
-    margin:0;
-}

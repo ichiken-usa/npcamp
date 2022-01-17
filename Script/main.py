@@ -5,6 +5,8 @@ from time import sleep
 import pandas as pd
 from tqdm import tqdm # pip3 install tqdm
 import gc
+import json
+import os
 
 # Selenium: pip3 install selenium
 from selenium import webdriver
@@ -42,10 +44,10 @@ log.set_log_config(logger, LOG_DIR, 'get_site_availability.log')
 
 class RecreationGov:
 
-    def __init__(self, target):
+    def __init__(self, name, url):
         
-        self.site_name = target[0]
-        self.address = target[1]
+        self.site_name = name
+        self.address = url
 
         # Headless Chromeをあらゆる環境で起動させるオプション
         options = Options()
@@ -248,16 +250,21 @@ class RecreationGov:
         return dt, status, 1
 
 
-def update_np_availability(area_name, targets):
+def update_np_availability(park):
 
     df_dict = {} # {キャンプ場名: df index=Datetime columns=[Available, Unavailable]}
+    area_name = park['area']
 
     # targetsを1個ずつ取得
-    for target in targets:
-        rc = RecreationGov(target)
+    for site in park['sites']:
+
+        name = site['name']
+        url = site['url']
+
+        rc = RecreationGov(name, url)
 
         #リンク付きのヘッダー作成
-        header = f'<a href="{target[1]}" target="_blank" rel="noopener noreferrer">{target[0]}</a>'
+        header = f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name}</a>'
         
         df_dict[header] = rc.get_reservation()
 
@@ -304,8 +311,8 @@ def update_np_availability(area_name, targets):
     dt_now = datetime.now(PST)
     page_dict['sync_datetime'] = dt_now.strftime('%Y/%m/%d %H:%M:%S PST')
 
-    #logger.debug(page_dict)
-    #logger.debug(html_body)
+    # hタグ用国立公園名
+    page_dict['park'] = area_name
 
     # テンプレートHTMLを読み込んで出力
     # 入力
@@ -328,22 +335,15 @@ def update_np_availability(area_name, targets):
 
 if __name__ == '__main__':
 
+    # キャンプ場をまとめたJSONファイル読み出し
+    dir = os.path.join(os.path.dirname(__file__), 'sites.json')
+    with open(dir, mode="r") as f:
+        json_obj = json.load(f)
 
-    area_name = 'Yosemite'
-    targets = [
-        ['Yosemite Upper Pines','https://www.recreation.gov/camping/campgrounds/232447'],
-        ['Yosemite Lower Pines','https://www.recreation.gov/camping/campgrounds/232450'],
-        ['Yosemite North Pines','https://www.recreation.gov/camping/campgrounds/232449'],
-        ]
+    logger.debug(json_obj)
 
-    update_np_availability(area_name,targets)
+    # 各国立公園ごとにデータを渡してHTMLファイルを作成
+    for park in json_obj["parks"]:
 
-
-    area_name = 'GrandCanyon'
-    targets = [
-        ['Grand Canyon Mather Campground', 'https://www.recreation.gov/camping/campgrounds/232490'],
-        ['Grand Canyon Desert View Campground', 'https://www.recreation.gov/camping/campgrounds/258825'],
-        ['Grand Canyon North Rim Campground', 'https://www.recreation.gov/camping/campgrounds/232489'],
-        ]
-
-    update_np_availability(area_name,targets)
+        logger.info(f'Area: {park["area"]}')
+        update_np_availability(park)

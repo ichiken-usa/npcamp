@@ -1,0 +1,26 @@
+{
+    "parks": [
+        {
+            "area": "Yosemite",
+            "sites": [
+                {
+                    "name": "Yosemite Upper Pines",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232447"
+                }
+            ]
+        },
+        {
+            "area": "Grand_Canyon",
+            "sites": [
+                {
+                    "name": "Grand Canyon Mather Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232490"
+                },
+                {
+                    "name":"Grand Canyon North Rim Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/232489"
+                }
+            ]
+        }
+    ]
+}
