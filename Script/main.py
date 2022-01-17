@@ -27,7 +27,7 @@ if PRODUCTION == False:
     DELAY = 0
 
 else:
-    DELAY = 0.1
+    DELAY = 0.2 #ループのディレイ。ラズパイでは処理能力不足のためリソース開放しないとWeb側の処理ができない。
 
 READ_DATA_FLAG = True
 CYCLE = 1 # 1 cycle 15 days
