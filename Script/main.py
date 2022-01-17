@@ -314,7 +314,7 @@ def update_np_availability(park):
 
     # テンプレートHTMLを読み込んで出力
     # 入力
-    template_html_dir = HTML_DIR + 'template.html'
+    template_html_dir = './Web/templates/template.html'
     # 出力
     table_html_dir = HTML_DIR + area_name + '.html'
 
