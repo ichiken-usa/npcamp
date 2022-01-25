@@ -20,14 +20,13 @@ import log
 PRODUCTION = True
 PARENT_DIR = './Web/'
 
-INDEX_DIR = PARENT_DIR + 'index.html'
 HTML_DIR = PARENT_DIR + 'pages/'
 
 if PRODUCTION == False:    
     DELAY = 0
 
 else:
-    DELAY = 0.2 #ループのディレイ。ラズパイでは処理能力不足のためリソース開放しないとWeb側の処理ができない。
+    DELAY = 0.1 #ループのディレイ。ラズパイでは処理能力不足のためリソース開放しないとWeb側の処理ができない。
 
 READ_DATA_FLAG = True
 CYCLE = 1 # 1 cycle 15 days
