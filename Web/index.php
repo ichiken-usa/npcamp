@@ -10,7 +10,8 @@
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
 
-  <title>NPCamp Enjoy your camping</title>
+  <title>NPCamp Availability of National Park Campsites</title>
+  <meta content="アメリカ国立公園キャンプ場の空き情報まとめサイト。This site automatically totals the availability of national park campsites." name="description">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
