@@ -40,6 +40,78 @@
             ]
         },
         {
+            "area": "Sequoia_and_Kings_Canyon",
+            "sites": [
+                {
+                    "name": "Azalea Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/10124502"
+                },
+                {
+                    "name":"Potwisha Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/249979?tab=campsites"
+                },
+                {
+                    "name":"Buckeye Flat Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/249982"
+                },
+                {
+                    "name":"Crystal Springs Campground Mid-Sized Group Sites",
+                    "url":"https://www.recreation.gov/camping/campgrounds/251008"
+                }
+
+            ]
+        },
+        {
+            "area": "Pinnacles",
+            "sites": [
+                {
+                    "name": "Pinnacles Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/234015"
+                }
+            ]
+        },
+        {
+            "area": "Channel_Islands",
+            "sites": [
+                {
+                    "name": "Santa Cruz Scorpion",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232498"
+                },
+                {
+                    "name": "Santa Cruz Del Norte Backcountry",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232499"
+                },
+                {
+                    "name": "Anacapa Island",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232502"
+                },
+                {
+                    "name": "Santa Rosa Island",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232497"
+                },
+                {
+                    "name": "Santa_Barbara_Island",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232497"
+                }
+
+            ]
+        },
+        {
+            "area": "Joshua_Tree",
+            "sites": [
+                {
+                    "name": "Sheep Pass Group",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232470"
+                },
+                {
+                    "name": "Jumbo Rocks Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/272300"
+                }
+            ]
+        },
+
+
+        {
             "area": "Grand_Canyon",
             "sites": [
                 {

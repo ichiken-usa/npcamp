@@ -89,7 +89,20 @@
 
     <!-- Campsite data -->
     <h2>West</h2>
+
+    <?php include('pages/Lassen_Volcanic.html') ?>
+
     <?php include('pages/Yosemite.html') ?>
+
+    <?php include('pages/Death_Valley.html') ?>
+
+    <?php include('pages/Sequoia_and_Kings_Canyon.html') ?>
+
+    <?php include('pages/Pinnacles.html') ?>
+
+    <?php include('pages/Channel_Islands.html') ?>
+
+    <?php include('pages/Joshua_Tree.html') ?>
 
     <?php include('pages/Grand_Canyon.html') ?>
 
