@@ -16,6 +16,7 @@ from selenium.webdriver.chrome.options import Options
 
 # Self-made module
 import log
+import update_count
 
 PRODUCTION = True
 PARENT_DIR = './Web/'
@@ -334,7 +335,10 @@ if __name__ == '__main__':
 
     while True:
 
-        try:        
+        try:
+            # 対応サイト数表示の自動更新
+            update_count.update_num_of_parks_and_sites()
+
             # キャンプ場をまとめたJSONファイル読み出し
             dir = os.path.join(os.path.dirname(__file__), 'sites.json')
             with open(dir, mode="r") as f:
