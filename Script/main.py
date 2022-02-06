@@ -23,6 +23,9 @@ PARENT_DIR = './Web/'
 
 HTML_DIR = PARENT_DIR + 'pages/'
 
+TEMPLATE_HTML_DIR = './Web/templates/template.html'
+
+
 if PRODUCTION == False:    
     DELAY = 0
 
@@ -42,10 +45,7 @@ log.set_log_config(logger, LOG_DIR, 'get_site_availability.log')
 
 class RecreationGov:
 
-    def __init__(self, name, url):
-        
-        self.site_name = name
-        self.address = url
+    def __init__(self):
 
         # Headless Chromeをあらゆる環境で起動させるオプション
         options = Options()
@@ -62,18 +62,22 @@ class RecreationGov:
 
         else:
             #options.add_argument('--headless')
+            options.add_argument('--disable-gpu')
+            options.add_argument('--disable-extensions')
+            options.add_argument('--proxy-server="direct://"')
+            options.add_argument('--proxy-bypass-list=*')
 
             self.driver = webdriver.Chrome(options=options)
             self.driver.set_window_size(800,1000)
             self.driver.set_window_position(0,0)
             self.driver.implicitly_wait(10) #sec
 
-    def get_reservation(self):
+    def get_reservation(self, site_url):
 
         try:
             # Open web page
-            logger.info(f'Open: {self.address}')
-            self.driver.get(self.address)
+            logger.info(f'Open: {site_url}')
+            self.driver.get(site_url)
             sleep(1)
 
             # 毎回Popupが表示されるページあり -> Popupのクローズボタンがある場合はクリックして閉じる
@@ -163,9 +167,6 @@ class RecreationGov:
         except Exception as e:
             logger.exception(e)
 
-        finally:
-            self.driver.close()
-
     ### Private method ###
 
     def __send_key_by_id(self, id, text):
@@ -210,7 +211,7 @@ class RecreationGov:
                 self.__click_by_xpath(xpath)
 
         except Exception as e:
-            logger.exception(e)
+            logger.debug(e)
 
     def __get_dt_and_status(self, date_and_status_str):
     
@@ -248,90 +249,85 @@ class RecreationGov:
         return dt, status, 1
 
 
-def update_np_availability(park):
+    def update_np_availability(self, park):
 
-    df_dict = {} # {キャンプ場名: df index=Datetime columns=[Available, Unavailable]}
-    area_name = park['area']
+        df_dict = {} # {キャンプ場名: df index=Datetime columns=[Available, Unavailable]}
+        area_name = park['area']
 
-    # targetsを1個ずつ取得
-    for site in park['sites']:
+        # targetsを1個ずつ取得
+        for site in park['sites']:
 
-        name = site['name']
-        url = site['url']
+            name = site['name']
+            url = site['url']
 
-        rc = RecreationGov(name, url)
+            #リンク付きのヘッダー作成
+            header = f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name}</a>'
+            
+            df_dict[header] = self.get_reservation(url)
 
-        #リンク付きのヘッダー作成
-        header = f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name}</a>'
+            #gc.collect()
+
+        logger.debug(df_dict)
+
+        # HTML表用のDF作成
+        df_for_html = pd.DataFrame()
+        for k, v_df in df_dict.items():
+            # 文字列にしておかないと勝手に小数点が入ったり入らなかったりする
+            #df_for_html[k] = v_df['Available'].apply(lambda x: str(int(x)))
+            df_for_html[k] = v_df['Available'].astype(str)
+
+        # NaNを0埋め
+        df_for_html = df_for_html.fillna(0)
         
-        df_dict[header] = rc.get_reservation()
+        # HTML出力用にDatetimeのindexを文字列にして上書き そのままだと00:00:00も出力される
+        # https://note.nkmk.me/python-datetime-day-locale-function/
+        df_for_html.index = df_for_html.index.strftime('%m/%d<br/>%a')
+        #logger.debug(df_for_html)
 
-        del rc
-        del header
-        gc.collect()
-
-    logger.info(df_dict)
-
-    # HTML表用のDF作成
-    df_for_html = pd.DataFrame()
-    for k, v_df in df_dict.items():
-        # 文字列にしておかないと勝手に小数点が入ったり入らなかったりする
-        #df_for_html[k] = v_df['Available'].apply(lambda x: str(int(x)))
-        df_for_html[k] = v_df['Available'].astype(str)
-
-    # NaNを0埋め
-    df_for_html = df_for_html.fillna(0)
-    
-    # HTML出力用にDatetimeのindexを文字列にして上書き そのままだと00:00:00も出力される
-    # https://note.nkmk.me/python-datetime-day-locale-function/
-    df_for_html.index = df_for_html.index.strftime('%m/%d<br/>%a')
-    #logger.debug(df_for_html)
-
-    # HTML出力 T属性で行列転置 日付をカラムへ
-    # Classで直接hover用のクラスを入れる
+        # HTML出力 T属性で行列転置 日付をカラムへ
+        # Classで直接hover用のクラスを入れる
 
 
-    page_dict = {} # {置換対象 : 中身}
+        page_dict = {} # {置換対象 : 中身}
 
-    # 出力したHTMLを読み込んで背景色を条件に従って追加
-    # テンプレ読み込んで置換する方法 https://1-notes.com/python-replace-html/
+        # 出力したHTMLを読み込んで背景色を条件に従って追加
+        # テンプレ読み込んで置換する方法 https://1-notes.com/python-replace-html/
 
-    # 表のHTML出力
-    
-    page_dict['dataframe_html'] = df_for_html.T.to_html(escape=False, justify='center', classes='table-hover')
+        # 表のHTML出力
+        
+        page_dict['dataframe_html'] = df_for_html.T.to_html(escape=False, justify='center', classes='table-hover')
 
-    page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0</td>','<td bgcolor="666666">0</td>')
-    page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0.0</td>','<td bgcolor="666666">0</td>')
+        page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0</td>','<td bgcolor="666666">0</td>')
+        page_dict['dataframe_html'] = page_dict['dataframe_html'].replace('<td>0.0</td>','<td bgcolor="666666">0</td>')
 
-    #logger.debug(page_dict)
-    
-    # 更新時刻
-    dt_now = datetime.now(PST)
-    page_dict['sync_datetime'] = dt_now.strftime('%Y/%m/%d %H:%M:%S PST')
+        #logger.debug(page_dict)
+        
+        # 更新時刻
+        dt_now = datetime.now(PST)
+        page_dict['sync_datetime'] = dt_now.strftime('%Y/%m/%d %H:%M:%S PST')
 
-    # hタグ用国立公園名
-    page_dict['park'] = area_name
+        # hタグ用国立公園名
+        page_dict['park'] = area_name
 
-    # テンプレートHTMLを読み込んで出力
-    # 入力
-    template_html_dir = './Web/templates/template.html'
-    # 出力
-    table_html_dir = HTML_DIR + area_name + '.html'
+        # テンプレートHTMLを読み込んで出力
+        table_html_dir = HTML_DIR + area_name + '.html'
 
-    with open(template_html_dir, 'r') as f:
-        html_body = f.read()
+        with open(TEMPLATE_HTML_DIR, 'r') as f:
+            html_body = f.read()
 
-    # {% %}をpage_dataに置換え
-    for key, value in page_dict.items():
-        html_body = html_body.replace('{% ' + key + ' %}', value)
+        # {% %}をpage_dataに置換え
+        for key, value in page_dict.items():
+            html_body = html_body.replace('{% ' + key + ' %}', value)
 
-    # 出力
-    with open(table_html_dir, 'w') as f:
-        f.write(html_body)
-    
+        # 出力
+        with open(table_html_dir, 'w') as f:
+            f.write(html_body)
+        
 
 
 if __name__ == '__main__':
+
+    rc = RecreationGov()
 
     while True:
 
@@ -350,7 +346,9 @@ if __name__ == '__main__':
             for park in json_obj["parks"]:
 
                 logger.info(f'Area: {park["area"]}')
-                update_np_availability(park)
+                rc.update_np_availability(park)
+
+            gc.collect()
 
             # 非本番の場合はループしない
             if PRODUCTION == False:
@@ -359,3 +357,6 @@ if __name__ == '__main__':
         except Exception as e:
             logger.exception(e)
             sleep(60)
+
+            del rc
+            rc = RecreationGov()
