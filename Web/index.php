@@ -66,6 +66,8 @@
 
     <?php include('pages/Olympic.html') ?>
 
+    <?php include('pages/Mount_Rainier.html') ?>
+
     <?php include('pages/Lassen_Volcanic.html') ?>
 
     <?php include('pages/Yosemite.html') ?>
@@ -79,6 +81,8 @@
     <?php include('pages/Channel_Islands.html') ?>
 
     <?php include('pages/Joshua_Tree.html') ?>
+
+    <?php include('pages/Great_Basin.html') ?>
 
     <?php include('pages/Grand_Canyon.html') ?>
 

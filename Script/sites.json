@@ -47,6 +47,28 @@
             ]
         },
         {
+            "area": "Mount_Rainier",
+            "sites": [
+                {
+                    "name":"Cougar Rock Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/232466"
+                },
+                {
+                    "name":"Cougar Rock Group Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/232510"
+                },
+                {
+                    "name":"Ohanapecosh Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/232465"
+                },
+                {
+                    "name": "Ohanapecosh Group Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/232509"
+                }
+            ]
+        },
+
+        {
             "area": "Lassen_Volcanic",
             "sites": [
                 {
@@ -152,6 +174,27 @@
                 {
                     "name": "Jumbo Rocks Campground",
                     "url": "https://www.recreation.gov/camping/campgrounds/272300"
+                }
+            ]
+        },
+        {
+            "area":"Great_Basin",
+            "sites":[
+                {
+                    "name":"Upper Lehman Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/10101374"
+                },
+                {
+                    "name":"Lower Lehman Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/10101362"
+                },
+                {
+                    "name":"Wheeler Peak Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/10088563"
+                },
+                {
+                    "name":"Grey Cliffs Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/251958"
                 }
             ]
         },
