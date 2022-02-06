@@ -5,41 +5,31 @@ from time import sleep
 import pandas as pd
 from tqdm import tqdm # pip3 install tqdm
 import gc
-import json
-import os
 
 # Selenium: pip3 install selenium
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 # Self-made module
 import log
 import update_count
-
-PRODUCTION = True
-PARENT_DIR = './Web/'
-
-HTML_DIR = PARENT_DIR + 'pages/'
-
-TEMPLATE_HTML_DIR = './Web/templates/template.html'
-
-
-if PRODUCTION == False:    
-    DELAY = 0
-
-else:
-    DELAY = 0.1 #ループのディレイ。ラズパイでは処理能力不足のためリソース開放しないとWeb側の処理ができない。
-
-READ_DATA_FLAG = True
-CYCLE = 1 # 1 cycle 15 days
+import common as com
 
 PST = timezone(timedelta(hours=-8))
 
+### Configファイル読み込み ###
+config = com.read_json_from_current_folder('config.json')
+
+DELAY = config['delay'] # ラズパイの場合はリソース不足のためにループにディレイを入れて都度リソースを開放しないとWeb応答しない
+SITES_AVAILABILITY_HTML_DIR = config['pages_dir'] # 取得してきた空き情報HTMLを出力するフォルダ
+TEMPLATE_HTML_DIR = config['template_html_dir'] # HTML出力する際のテンプレや、HeaderなどのHTMLをまとめたフォルダ。PHPで読み出し。
+CYCLE = config['cycle'] # 1 cycle 15 days
+HEADLESS = config['headless']
+ENDLESS = config['endless']
 
 ### Log ###
-LOG_DIR = './Script/Log/'
+LOG_DIR = config['log_dir']
 logger = getLogger(__name__)
 log.set_log_config(logger, LOG_DIR, 'get_site_availability.log')
 
@@ -49,28 +39,23 @@ class RecreationGov:
 
         # Headless Chromeをあらゆる環境で起動させるオプション
         options = Options()
-        if PRODUCTION == True:
-            options.add_argument('--disable-gpu')
-            options.add_argument('--disable-extensions')
-            options.add_argument('--proxy-server="direct://"')
-            options.add_argument('--proxy-bypass-list=*')
-            options.add_argument('--start-maximized')
+
+        options.add_argument('--disable-gpu')
+        options.add_argument('--disable-extensions')
+        options.add_argument('--proxy-server="direct://"')
+        options.add_argument('--proxy-bypass-list=*')
+        options.add_argument('--start-maximized')
+
+        if HEADLESS == True:
             options.add_argument('--headless')
 
-            self.driver = webdriver.Chrome(options=options)
-            self.driver.implicitly_wait(10) #sec
+        self.driver = webdriver.Chrome(options=options)
+        self.driver.implicitly_wait(10) #sec
 
-        else:
-            #options.add_argument('--headless')
-            options.add_argument('--disable-gpu')
-            options.add_argument('--disable-extensions')
-            options.add_argument('--proxy-server="direct://"')
-            options.add_argument('--proxy-bypass-list=*')
-
-            self.driver = webdriver.Chrome(options=options)
+        if HEADLESS == False:
             self.driver.set_window_size(800,1000)
             self.driver.set_window_position(0,0)
-            self.driver.implicitly_wait(10) #sec
+
 
     def get_reservation(self, site_url):
 
@@ -310,7 +295,7 @@ class RecreationGov:
         page_dict['park'] = area_name
 
         # テンプレートHTMLを読み込んで出力
-        table_html_dir = HTML_DIR + area_name + '.html'
+        table_html_dir = SITES_AVAILABILITY_HTML_DIR + area_name + '.html'
 
         with open(TEMPLATE_HTML_DIR, 'r') as f:
             html_body = f.read()
@@ -336,22 +321,18 @@ if __name__ == '__main__':
             update_count.update_num_of_parks_and_sites()
 
             # キャンプ場をまとめたJSONファイル読み出し
-            dir = os.path.join(os.path.dirname(__file__), 'sites.json')
-            with open(dir, mode="r") as f:
-                json_obj = json.load(f)
-
-            logger.debug(json_obj)
+            sites_json = com.read_json_from_current_folder('sites.json')
 
             # 各国立公園ごとにデータを渡してHTMLファイルを作成
-            for park in json_obj["parks"]:
+            for park in sites_json["parks"]:
 
                 logger.info(f'Area: {park["area"]}')
                 rc.update_np_availability(park)
 
             gc.collect()
 
-            # 非本番の場合はループしない
-            if PRODUCTION == False:
+            # ENDLESSフラグがFalseの場合は一回で終わる
+            if ENDLESS == False:
                 break
 
         except Exception as e:
@@ -360,3 +341,6 @@ if __name__ == '__main__':
 
             del rc
             rc = RecreationGov()
+
+    rc.driver.close()
+    del rc

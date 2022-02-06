@@ -1,0 +1,11 @@
+{
+    "log_dir" : "./Script/Log/",
+    "pages_dir" : "./Web/pages/",
+    "template_html_dir" : "./Web/templates/template.html",
+    "template_count_dir" : "./Web/templates/count.html",
+    "table_html_dir" : "./Web/pages/count.html",
+    "delay" : 0,
+    "cycle" : 1,
+    "headless" : false,
+    "endless" : false
+}
