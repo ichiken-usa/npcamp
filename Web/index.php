@@ -62,6 +62,10 @@
     <!-- Campsite data -->
     <h2>West</h2>
 
+    <?php include('pages/North_Cascades.html') ?>
+
+    <?php include('pages/Olympic.html') ?>
+
     <?php include('pages/Lassen_Volcanic.html') ?>
 
     <?php include('pages/Yosemite.html') ?>
