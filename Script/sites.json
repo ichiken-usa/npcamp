@@ -1,6 +1,52 @@
 {
     "parks": [
         {
+            "area": "North_Cascades",
+            "sites": [
+                {
+                    "name": "Colonial Creek North Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/246855"
+                },
+                {
+                    "name":"Colonial Creek South Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/255201"
+                },
+                {
+                    "name":"Goodell Creek Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/246852"
+                },
+                {
+                    "name":"Lower Goodell Group Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/234088"
+                },
+                {
+                    "name":"Gorge Lake Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/10004932"
+                },
+                {
+                    "name":"Newhalem Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/234060"
+                }
+            ]
+        },
+        {
+            "area": "Olympic",
+            "sites": [
+                {
+                    "name": "Sol Duc Hot Springs Resort Campground",
+                    "url": "https://www.recreation.gov/camping/campgrounds/251906"
+                },
+                {
+                    "name":"Hoh Rainforest Campground",
+                    "url":"https://www.recreation.gov/camping/campgrounds/247592"
+                },
+                {
+                    "name":"Kalaloch",
+                    "url":"https://www.recreation.gov/camping/campgrounds/232464"
+                }
+            ]
+        },
+        {
             "area": "Lassen_Volcanic",
             "sites": [
                 {
