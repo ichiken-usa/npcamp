@@ -84,6 +84,10 @@
 
     <?php include('pages/Great_Basin.html') ?>
 
+    <?php include('pages/Yellowstone.html') ?>
+
+    <?php include('pages/Grand_Teton.html') ?>
+
     <?php include('pages/Grand_Canyon.html') ?>
 
   </div>
