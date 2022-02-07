@@ -88,7 +88,20 @@
 
     <?php include('pages/Grand_Teton.html') ?>
 
+    <?php include('pages/Zion.html') ?>
+
+    <?php include('pages/Bryce_Canyon.html') ?>
+
+    <?php include('pages/Capitol_Reef.html') ?>
+
+    <?php include('pages/Canyonlands.html') ?>
+
+    <?php include('pages/Arches.html') ?>
+
     <?php include('pages/Grand_Canyon.html') ?>
+
+    <?php include('pages/Rocky_Mountain') ?>
+    
 
   </div>
 

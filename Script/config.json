@@ -6,6 +6,6 @@
     "table_html_dir" : "./Web/pages/count.html",
     "delay" : 0,
     "cycle" : 1,
-    "headless" : false,
+    "headless" : true,
     "endless" : false
 }
