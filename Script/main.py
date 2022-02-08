@@ -250,7 +250,10 @@ class RecreationGov:
             
             df_dict[header] = self.get_reservation(url)
 
-            #gc.collect()
+            del name
+            del url
+            del header
+            gc.collect()
 
         logger.debug(df_dict)
 
@@ -326,10 +329,15 @@ if __name__ == '__main__':
             # 各国立公園ごとにデータを渡してHTMLファイルを作成
             for park in sites_json["parks"]:
 
-                logger.info(f'Area: {park["area"]}')
-                rc.update_np_availability(park)
+                try:
+                    logger.info(f'Area: {park["area"]}')
+                    rc.update_np_availability(park)
 
-            gc.collect()
+                    gc.collect()
+
+                except Exception as e:
+                    logger.exception(e)
+                    sleep(60)
 
             # ENDLESSフラグがFalseの場合は一回で終わる
             if ENDLESS == False:
