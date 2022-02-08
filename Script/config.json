@@ -4,8 +4,8 @@
     "template_html_dir" : "./Web/templates/template.html",
     "template_count_dir" : "./Web/templates/count.html",
     "table_html_dir" : "./Web/pages/count.html",
-    "delay" : 0,
+    "delay" : 0.01,
     "cycle" : 1,
     "headless" : true,
-    "endless" : false
+    "endless" : true
 }
